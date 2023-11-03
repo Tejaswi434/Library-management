@@ -4,6 +4,7 @@ let spinning = document.getElementById("spinner")
 searchingbar.addEventListener("keydown", function(event) {
     spinning.classList.remove("d-none");
     if (event.key === "Enter") {
+        projecting.textContent = ""
         let url = "https://apis.ccbp.in/book-store?title=" + searchingbar.value;
 
 
@@ -11,6 +12,7 @@ searchingbar.addEventListener("keydown", function(event) {
             method: "GET"
         }
         fetch(url, options)
+
 
             .then(function(response) {
                 return response.json()
